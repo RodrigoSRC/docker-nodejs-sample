@@ -1,0 +1,47 @@
+services:
+  server:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+
+
+# services:
+#   server:
+#     build:
+#       context: ./server  # Caminho para o Dockerfile do servidor
+#     environment:
+#       NODE_ENV: production
+#       PORT: 3000
+#     ports:
+#       - 3000:3000
+#     depends_on:
+#       - db  # Inclua esta linha se o servidor depende de um banco de dados
+
+#   app:
+#     build:
+#       context: ./app  # Caminho para o Dockerfile do aplicativo
+#     environment:
+#       NODE_ENV: production
+#       PORT: 3000
+#     ports:
+#       - 3001:3000  # Mapeia a porta 3000 do contêiner para a porta 3001 no host
+#     depends_on:
+#       - db  # Inclua esta linha se o aplicativo depende de um banco de dados
+
+#   db:
+#     image: postgres
+#     restart: always
+#     environment:
+#       POSTGRES_DB: example
+#       POSTGRES_USER: user
+#       POSTGRES_PASSWORD: password
+#     volumes:
+#       - db-data:/var/lib/postgresql/data
+#     ports:
+#       - 5432:5432
+
+# volumes:
+#   db-data:
